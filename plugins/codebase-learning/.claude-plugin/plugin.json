@@ -1,0 +1,9 @@
+{
+  "name": "codebase-learning",
+  "description": "A comprehensive plugin for learning codebase structure, architecture, design patterns, and domain concepts through specialized agents and interactive commands",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jsnn",
+    "email": "jsnn@example.com"
+  }
+}

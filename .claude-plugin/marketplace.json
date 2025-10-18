@@ -1,13 +1,18 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "Jsnn-marketplace",
+  "version": "1.0.0",
+  "description": "A marketplace for codebase learning and exploration plugins",
   "owner": {
-    "name": "Jsnn"
+    "name": "Jsnn",
+    "email": "jsnn@example.com"
   },
   "plugins": [
     {
       "name": "codebase-learning",
-      "source": "./",
-      "description": "A comprehensive plugin for learning codebase structure, architecture, design patterns, and domain concepts through specialized agents and interactive commands"
+      "description": "A comprehensive plugin for learning codebase structure, architecture, design patterns, and domain concepts through specialized agents and interactive commands",
+      "source": "./plugins/codebase-learning",
+      "category": "development"
     }
   ]
 }
