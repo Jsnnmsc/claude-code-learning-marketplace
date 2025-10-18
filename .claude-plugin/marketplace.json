@@ -1,19 +1,13 @@
 {
   "name": "Jsnn-marketplace",
-  "owner": "Jsnn",
-  "description": "Jsnn's marketplace for the Codebase Learning plugin - helping developers understand and learn from any codebase",
+  "owner": {
+    "name": "Jsnn"
+  },
   "plugins": [
     {
       "name": "codebase-learning",
       "source": "./",
-      "description": "A comprehensive plugin for learning codebase structure, architecture, design patterns, and domain concepts through specialized agents and interactive commands",
-      "tags": [
-        "learning",
-        "architecture",
-        "patterns",
-        "documentation",
-        "education"
-      ]
+      "description": "A comprehensive plugin for learning codebase structure, architecture, design patterns, and domain concepts through specialized agents and interactive commands"
     }
   ]
 }
