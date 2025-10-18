@@ -2,7 +2,9 @@
   "name": "codebase-learning",
   "version": "1.0.0",
   "description": "A comprehensive plugin for learning codebase structure, architecture, design patterns, and domain concepts through specialized agents and interactive commands",
-  "author": "Jsnn",
+  "author": {
+    "name": "Jsnn"
+  },
   "repository": "https://github.com/Jsnnmsc/claude-code-learning-marketplace",
   "license": "MIT",
   "keywords": [
@@ -63,6 +65,5 @@
       "file": "agents/concept-explainer.md"
     }
   ],
-  "homepage": "https://github.com/Jsnnmsc/claude-code-learning-marketplace",
-  "bugs": "https://github.com/Jsnnmsc/claude-code-learning-marketplace/issues"
+  "homepage": "https://github.com/Jsnnmsc/claude-code-learning-marketplace"
 }
