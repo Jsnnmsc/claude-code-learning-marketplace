@@ -1,6 +1,6 @@
-# Learning sessions (user-generated, should not be committed)
-.learning-sessions/*.md
-!.learning-sessions/README.md
+# Codebase analysis results (user-generated, not committed by default)
+.codebase-analysis/*.md
+!.codebase-analysis/README.md
 
 # OS files
 .DS_Store

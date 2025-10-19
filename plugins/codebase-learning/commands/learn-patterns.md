@@ -64,10 +64,18 @@ Provide educational explanations suitable for learning.
 
 ## After Agent Completion
 
-1. Review identified patterns
-2. Offer to save to `.learning-sessions/patterns-[timestamp].md`
-3. Suggest creating a pattern catalog for future reference
-4. Recommend related explorations:
+1. **Save the pattern analysis to a markdown file**:
+   - Create filename: `.codebase-analysis/patterns-[timestamp].md`
+   - Include the complete pattern analysis from the agent
+   - Format the content properly with markdown
+   - Use the Write tool to save the file
+   - Show the user the file path where it was saved
+
+2. **Present the results**:
+   - Read and display the saved markdown file to the user
+   - Inform them they can open the file in their editor for better viewing
+
+3. Recommend related explorations:
    - See patterns in action (/learn-flow)
    - Understand architectural context (/learn-architecture)
    - Explore domain-specific patterns (/learn-concepts)

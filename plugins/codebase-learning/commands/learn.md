@@ -35,17 +35,28 @@ Based on the user's choices, use the Task tool to launch the appropriate special
 
 Pass the user's scope and preferred output format to the agent in your prompt.
 
-## Learning Session Tracking
+## After Agent Completion
 
-After the agent completes its analysis:
+After the specialized agent completes its analysis:
 
-1. Ask the user if they want to save the findings to their learning session
-2. If yes, create a timestamped file in `.learning-sessions/` directory with:
-   - Session date and time
-   - Learning focus area
-   - Key findings and insights
-   - Links to relevant files
-   - Next steps for deeper exploration
+1. **Save the results to a markdown file**:
+   - Create a timestamped file in `.codebase-analysis/` directory:
+     - Architecture: `.codebase-analysis/architecture-[timestamp].md`
+     - Flow: `.codebase-analysis/flow-[feature-name]-[timestamp].md`
+     - Patterns: `.codebase-analysis/patterns-[timestamp].md`
+     - Concepts: `.codebase-analysis/concepts-[concept-name]-[timestamp].md`
+   - Include the complete analysis from the agent
+   - Format the content properly with markdown
+   - Use the Write tool to save the file
+   - Show the user the file path where it was saved
+
+2. **Present the results**:
+   - Read and display the saved markdown file to the user
+   - Inform them they can open the file in their editor for better viewing
+
+3. **Suggest next steps**:
+   - Recommend related areas to explore
+   - Encourage questions and deeper investigation
 
 ## Important Guidelines
 

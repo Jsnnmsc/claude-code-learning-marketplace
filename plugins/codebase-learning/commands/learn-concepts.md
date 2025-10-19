@@ -61,10 +61,18 @@ Include concrete examples from the codebase.
 
 ## After Agent Completion
 
-1. Review the concept explanation
-2. Offer to save to `.learning-sessions/concepts-[concept-name]-[timestamp].md`
-3. Suggest building a domain glossary
-4. Recommend related explorations:
+1. **Save the concept explanation to a markdown file**:
+   - Create filename: `.codebase-analysis/concepts-[concept-name]-[timestamp].md`
+   - Include the complete concept explanation from the agent
+   - Format the content properly with markdown
+   - Use the Write tool to save the file
+   - Show the user the file path where it was saved
+
+2. **Present the results**:
+   - Read and display the saved markdown file to the user
+   - Inform them they can open the file in their editor for better viewing
+
+3. Recommend related explorations:
    - Trace how the concept is used (/learn-flow)
    - See patterns related to this concept (/learn-patterns)
    - Understand the architecture around it (/learn-architecture)

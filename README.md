@@ -9,7 +9,6 @@ A comprehensive Claude Code plugin designed to help developers learn and underst
 - [Installation](#installation)
 - [Commands Reference](#commands-reference)
 - [Usage Examples](#usage-examples)
-- [Learning Sessions](#learning-sessions)
 - [Output Formats](#output-formats)
 - [Best Practices](#best-practices)
 - [Troubleshooting](#troubleshooting)
@@ -41,12 +40,6 @@ A comprehensive Claude Code plugin designed to help developers learn and underst
 - Learn domain-specific terminology
 - Map concepts to code implementations
 - Explore entity relationships and workflows
-
-### 📚 Learning Session Tracking
-- Save findings from each learning session
-- Build a personal knowledge base
-- Track exploration progress
-- Share insights with team members
 
 ### 🎯 Interactive Output Formats
 Choose your preferred learning style:
@@ -100,7 +93,15 @@ Claude will ask you:
 
 The Architecture Analyzer agent will analyze your codebase and provide a comprehensive overview!
 
-### 3. Explore Different Aspects
+### 3. View Results
+
+The analysis will be automatically saved to a markdown file in `.codebase-analysis/` directory. You can open this file in your editor for better viewing with:
+- Formatted markdown
+- Rendered diagrams
+- Clickable file references
+- Easy navigation
+
+### 4. Explore Different Aspects
 
 ```bash
 # Trace how a feature works
@@ -285,9 +286,11 @@ The plugin will:
 1. Ask for your preferred output format
 2. Ask what scope to analyze (full system, specific module, etc.)
 3. Launch the Architecture Analyzer agent
-4. Present comprehensive analysis with diagrams
-5. Offer to save findings to your learning session
+4. Save the analysis to `.codebase-analysis/architecture-[timestamp].md`
+5. Display the results and provide the file path
 6. Suggest related areas to explore
+
+You can then open the markdown file in your editor for better viewing.
 
 ### Example 2: Understanding a Feature
 
@@ -301,9 +304,10 @@ The plugin will:
 1. Ask for output format preference
 2. Find the authentication entry point
 3. Trace the complete execution path
-4. Show data flow and transformations
-5. Highlight key decision points
-6. Save the flow analysis for future reference
+4. Save the flow analysis to `.codebase-analysis/flow-authentication-[timestamp].md`
+5. Display the results and provide the file path
+
+Open the file in your editor to see the complete flow trace with diagrams.
 
 ### Example 3: Learning Domain Concepts
 
@@ -316,10 +320,11 @@ You're working with a complex business domain:
 The plugin will:
 1. Ask for exploration depth (overview/implementation/complete)
 2. Ask for output format
-3. Explain the business concept
-4. Map it to code implementation
-5. Show business rules in action
-6. Save concept documentation
+3. Analyze the domain concept
+4. Save the explanation to `.codebase-analysis/concepts-payment-processing-[timestamp].md`
+5. Display the results and provide the file path
+
+View the file in your editor to understand the business logic and code mapping.
 
 ### Example 4: Pattern Discovery
 
@@ -333,45 +338,58 @@ The plugin will:
 1. Ask what patterns to look for (design/architectural/conventions/all)
 2. Ask for analysis scope
 3. Scan and identify patterns
-4. Explain each pattern found
-5. Show code examples
-6. Create a pattern catalog
+4. Save the pattern catalog to `.codebase-analysis/patterns-[timestamp].md`
+5. Display the results and provide the file path
 
-## Learning Sessions
+Open the file to browse the complete pattern catalog with examples.
 
-All your learning sessions are automatically saved to `.learning-sessions/` directory:
+## Analysis Results Storage
+
+All analysis results are automatically saved to the `.codebase-analysis/` directory:
 
 ```
-.learning-sessions/
-├── architecture-2025-01-15-14-30.md
-├── flow-user-auth-2025-01-15-15-00.md
-├── patterns-2025-01-15-16-00.md
-├── concepts-payment-2025-01-16-10-00.md
-└── index.md  # Auto-generated index
+.codebase-analysis/
+├── README.md                              # Directory documentation
+├── architecture-2025-01-19-14-30.md      # Architecture analyses
+├── flow-authentication-2025-01-19-15-00.md  # Flow traces
+├── patterns-2025-01-19-16-00.md          # Pattern detections
+└── concepts-payment-2025-01-20-10-00.md  # Concept explorations
 ```
 
-### Benefits of Saved Sessions
-- **Knowledge Base**: Build comprehensive codebase documentation over time
-- **Quick Reference**: Easily recall what you've learned
-- **Team Sharing**: Share insights with team members
-- **Progress Tracking**: See what areas you've explored
-- **Connected Learning**: Sessions cross-reference each other
+### Benefits of Saved Files
 
-### Managing Sessions
+- **Better Viewing**: Open in your editor for:
+  - Syntax highlighting
+  - Rendered Mermaid diagrams
+  - Clickable file references
+  - Proper markdown formatting
 
-**View all sessions**:
+- **Easy Navigation**: Use your editor's:
+  - Outline view for quick navigation
+  - Search functionality
+  - Split view for comparing analyses
+
+- **Version Control**: Choose to:
+  - Keep analyses private (default, in `.gitignore`)
+  - Commit as team documentation
+  - Share specific analyses with teammates
+
+### Managing Analysis Files
+
+**View all analyses**:
 ```bash
-ls .learning-sessions/
+ls .codebase-analysis/
 ```
 
-**Search sessions**:
+**Search across analyses**:
 ```bash
-grep -r "authentication" .learning-sessions/
+grep -r "authentication" .codebase-analysis/
 ```
 
-**Review index**:
+**Open in editor**:
 ```bash
-cat .learning-sessions/index.md
+# Or simply click the file path provided after analysis
+code .codebase-analysis/architecture-*.md
 ```
 
 ## Output Formats
@@ -422,7 +440,6 @@ cat .learning-sessions/index.md
 2. Use `/learn-patterns` to understand conventions
 3. Trace important features with `/learn-flow`
 4. Dive into domain concepts with `/learn-concepts`
-5. Save all sessions for future reference
 
 ### For Debugging
 1. Use `/learn-flow` to trace the problematic feature
@@ -435,7 +452,7 @@ cat .learning-sessions/index.md
 3. Use `/learn-concepts` to validate business logic
 
 ### For Documentation
-1. Save learning sessions as team documentation
+1. Copy analysis results to create team documentation
 2. Use visual diagram output for architecture docs
 3. Create concept glossaries with `/learn-concepts`
 4. Build pattern catalogs with `/learn-patterns`
@@ -534,22 +551,6 @@ cat .learning-sessions/index.md
 - Try the command again
 - Check Claude Code has necessary permissions
 
-### Sessions not saving
-
-**Problem**: Learning sessions aren't saved
-
-**Solutions**:
-1. Check `.learning-sessions/` directory exists in project root
-2. Verify write permissions:
-   ```bash
-   ls -la .learning-sessions/
-   ```
-3. Create directory manually if needed:
-   ```bash
-   mkdir -p .learning-sessions
-   ```
-4. Check disk space
-
 ## FAQ
 
 **Q: Does this plugin modify my code?**
@@ -591,12 +592,6 @@ A: Yes, but review your company's policies regarding AI code analysis tools.
 **Q: How accurate is the analysis?**
 
 A: Very accurate for understanding structure and patterns. For critical decisions, always verify findings.
-
----
-
-**Q: Can I share learning sessions with my team?**
-
-A: Yes! Sessions are saved as markdown files that can be committed to your repository or shared via any file-sharing method.
 
 ---
 

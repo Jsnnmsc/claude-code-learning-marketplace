@@ -52,8 +52,17 @@ Include file paths and line numbers for key points.
 
 ## After Agent Completion
 
-1. Review the traced flow
-2. Offer to save to `.learning-sessions/flow-[feature-name]-[timestamp].md`
+1. **Save the flow analysis to a markdown file**:
+   - Create filename: `.codebase-analysis/flow-[feature-name]-[timestamp].md`
+   - Include the complete flow trace from the agent
+   - Format the content properly with markdown
+   - Use the Write tool to save the file
+   - Show the user the file path where it was saved
+
+2. **Present the results**:
+   - Read and display the saved markdown file to the user
+   - Inform them they can open the file in their editor for better viewing
+
 3. Suggest related explorations:
    - Explore the architecture of involved components (/learn-architecture)
    - Identify patterns used in the flow (/learn-patterns)

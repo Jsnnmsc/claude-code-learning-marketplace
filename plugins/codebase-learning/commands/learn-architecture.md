@@ -51,8 +51,17 @@ Provide educational explanations suitable for someone learning this codebase.
 
 ## After Agent Completion
 
-1. Review the agent's findings
-2. Offer to save the analysis to `.learning-sessions/architecture-[timestamp].md`
+1. **Save the analysis to a markdown file**:
+   - Create filename: `.codebase-analysis/architecture-[timestamp].md`
+   - Include the complete analysis from the agent
+   - Format the content properly with markdown
+   - Use the Write tool to save the file
+   - Show the user the file path where it was saved
+
+2. **Present the results**:
+   - Read and display the saved markdown file to the user
+   - Inform them they can open the file in their editor for better viewing
+
 3. Suggest related exploration:
    - Trace a feature through the architecture (/learn-flow)
    - Identify specific patterns used (/learn-patterns)
